@@ -8,8 +8,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - 80:80
-    container_name: php7.4
     volumes:
       - "~/workspace/www:/var/www"
       - "~/workspace/vhosts:/etc/apache2/sites-enabled"
-
