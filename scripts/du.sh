@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+
+removeRunningContainersApartMysql() {
+  docker rm --force $(docker ps -a | grep -v "mysql" | awk 'NR>1 {print $1}')
+}
+
+
 connectToNetwork () {
 	NETWORK="lamp"
 	#Find out the networks that the container is connected to
@@ -14,6 +20,7 @@ connectToNetwork () {
 }
 
 startPhp () {
+	
 	cd ~/docker/php$1
 	docker-compose up -d
 	connectToNetwork php$1
@@ -28,10 +35,12 @@ startMysql () {
 
 if [[ "$1" == "db" ]];
 then
-  echo "starting mysql container"
+  echo "starting mysql container..."
   startMysql
 else
-	echo "start php container"
+	echo "removing running php container..."
+	removeRunningContainersApartMysql
+	echo "starting container php"$1
 	startPhp $1
 fi
 
