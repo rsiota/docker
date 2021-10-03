@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ "$EUID" -ne 0 ]
+    then
+        echo "Please run as root"
+        exit
+    else
+        if [ "$1" = '' ]
+           then
+               echo "Please enter the name for the virtual host"
+           else
+ sudo echo '<VirtualHost *:80>
+    ServerName '$1'
+    DocumentRoot /var/www/'$1'/public
+
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>' > ~/workspace/vhosts/$1.conf
+    sudo sed -i '' '1s/^/127.0.0.1 '$1' \n/' /etc/hosts
+    echo "Your virtual host $1 has been set up"
+       fi
+fi
+

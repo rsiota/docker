@@ -8,5 +8,3 @@ else
 	cd ~/docker/php$1
 	docker-compose down
 fi
-
-#alias dd="~/docker/scripts/dd.sh"

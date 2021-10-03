@@ -1,10 +1,22 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-
-removeRunningContainersApartMysql() {
-  docker rm --force $(docker ps -a | grep -v "mysql" | awk 'NR>1 {print $1}')
+checkIsNetworkLamp () {
+  NETWORK="lamp"
+  if [ ! "$(docker network ls | grep $NETWORK)" ]; then
+    echo "Creating lamp network..."
+    docker network create lamp
+  fi
 }
 
+removeRunningContainersApartMysql() {
+  CONTAINERS=$(docker ps -a | grep -v "mysql" | awk 'NR>1 {print $1}')
+  if [[ "$CONTAINERS" != "" ]];
+  then
+    echo "Removing running php container..."
+    docker rm --force $CONTAINERS
+  fi
+  # docker rm --force $(docker ps -a | grep -v "mysql" | awk 'NR>1 {print $1}')
+}
 
 connectToNetwork () {
 	NETWORK="lamp"
@@ -14,13 +26,12 @@ connectToNetwork () {
 	#Check if the php container is already attached to the lamp network
 	if [[ "$CONTAINER_NETWORKS" != *"$NETWORK"* ]];
 	then
-		echo "connecting container to lamp network..."
+		echo "Connecting container to lamp network..."
 		docker network connect lamp $1
 	fi
 }
 
 startPhp () {
-	
 	cd ~/docker/php$1
 	docker-compose up -d
 	connectToNetwork php$1
@@ -33,15 +44,13 @@ startMysql () {
   connectToNetwork mysql
 }
 
+checkIsNetworkLamp
 if [[ "$1" == "db" ]];
 then
-  echo "starting mysql container..."
+  echo "Starting mysql container..."
   startMysql
 else
-	echo "removing running php container..."
 	removeRunningContainersApartMysql
-	echo "starting container php"$1
 	startPhp $1
 fi
 
-#alias du="~/docker/scripts/du.sh"
