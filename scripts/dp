@@ -5,9 +5,9 @@ if [ "$EUID" -ne 0 ]
         exit
     else
         if [ "$1" = '' ]
-           then
-               echo "Please enter the name for the virtual host"
-           else
+        then
+            echo "Please enter the name for the virtual host"
+        else
  sudo echo '<VirtualHost *:80>
     ServerName '$1'
     DocumentRoot /var/www/'$1'/public

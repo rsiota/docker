@@ -2,7 +2,8 @@
 
 checkIsNetworkLamp () {
   NETWORK="lamp"
-  if [ ! "$(docker network ls | grep $NETWORK)" ]; then
+  if [ ! "$(docker network ls | grep $NETWORK)" ]; 
+  then
     echo "Creating lamp network..."
     docker network create lamp
   fi
@@ -35,7 +36,6 @@ startPhp () {
 	cd ~/docker/php$1
 	docker-compose up -d
 	connectToNetwork php$1
-
 }
 
 startMysql () {
@@ -44,8 +44,22 @@ startMysql () {
   connectToNetwork mysql
 }
 
+echoHelp () {
+    echo "Options: "
+    echo "db	Start mysql5.6 container and connect it to lamp network"
+    echo "5.4	Start php5.4 container and connect it to lamp network"
+    echo "5.6	Start php5.6 container and connect it to lamp network"
+    echo "7.0	Start php7.0 container and connect it to lamp network"
+    echo "7.1	Start php7.1 container and connect it to lamp network"
+    echo "7.2	Start php7.2 container and connect it to lamp network"
+    echo "7.4	Start php7.4 container and connect it to lamp network"
+}
+
 checkIsNetworkLamp
-if [[ "$1" == "db" ]];
+  if [[ "$1" = "--help" ]];
+  then
+    echoHelp
+  elif [[ "$1" == "db" ]];
 then
   echo "Starting mysql container..."
   startMysql
@@ -53,4 +67,3 @@ else
 	removeRunningContainersApartMysql
 	startPhp $1
 fi
-
