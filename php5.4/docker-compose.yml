@@ -1,5 +1,5 @@
 # Use root/root user/password credentials
-version: '3.1'
+version: '3.7'
 
 services:
   php:
@@ -9,5 +9,5 @@ services:
     ports:
       - 80:80
     volumes:
-      - "~/workspace/www:/var/www"
-      - "~/workspace/vhosts:/etc/apache2/sites-enabled"
+      - "${HOME}/workspace/www:/var/www"
+      - "${HOME}/workspace/vhosts:/etc/apache2/sites-enabled"
