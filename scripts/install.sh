@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cp dd dp du ~/bin
+cp dockd dockp docku ~/bin
 
