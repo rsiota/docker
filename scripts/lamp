@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source "functions/textStyles.sh"
+source "functions/noArguments.sh"
+source "functions/oneArgument.sh"
+source "functions/twoArguments.sh"
+source "functions/moreThanTwoArguments.sh"
+
+
+if [[ $# == 0 ]]; 
+then
+    noArguments
+elif [[ $# == 1 ]]; 
+then
+    oneArgument $1
+elif [[ $# == 2 ]]; 
+then
+    twoArguments
+elif [[ $# > 2 ]]; 
+then
+    moreThanTwoArguments
+fi
