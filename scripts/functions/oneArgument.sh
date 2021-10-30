@@ -14,7 +14,7 @@ function oneArgument {
 
     case $1 in
         up)
-            lampUp
+            lampUp 
             ;;
         down)
             lampDown
@@ -24,9 +24,6 @@ function oneArgument {
             ;;
         info)
             lampInfo
-            ;;
-        php)
-            lampPhp
             ;;
         mysql)
             lampMysql
