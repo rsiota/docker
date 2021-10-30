@@ -1,7 +1,11 @@
 #!/bin/bash
 
+source "functions/removeRunningContainersApartMysql.sh"
+source "functions/phpContainerStart.sh"
+
 function lampPhp {
-    echo "you typed php"
+    removeRunningContainersApartMysql
+    phpContainerStart $1
 }
 
 export -f lampPhp
