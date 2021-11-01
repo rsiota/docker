@@ -12,7 +12,7 @@ function lampUp {
     docker container prune --force
     networkLampCreate 
     mysqlContainerStart
-    phpContainerStart 7.4 
+    phpContainerStart 74 
 
 }
 

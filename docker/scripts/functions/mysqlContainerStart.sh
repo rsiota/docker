@@ -4,7 +4,7 @@ source "functions/networkLampConnectContainers.sh"
 
 function mysqlContainerStart {
 
-    cd ~/docker/mysql5.6
+    cd ../../docker/mysql56
     docker-compose up -d
     networkLampConnectContainers mysql
 
