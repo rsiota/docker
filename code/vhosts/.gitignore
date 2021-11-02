@@ -1,0 +1,6 @@
+# Ignore everyting:
+*
+
+# Except for example.test.conf 
+
+!example.test.conf

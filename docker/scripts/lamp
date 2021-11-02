@@ -12,6 +12,7 @@ then
     noArguments
 elif [[ $# == 1 ]]; 
 then
+    echo $LAMP_PATH
     oneArgument $1
 elif [[ $# == 2 ]]; 
 then
