@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "functions/lampPhp.sh"
+source "${BASE_PATH}/functions/lampPhp.sh"
 
 function twoArguments {
 

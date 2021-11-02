@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "functions/networkLampConnectContainers.sh"
+source "${BASE_PATH}/functions/networkLampConnectContainers.sh"
 
 function phpContainerStart {
 

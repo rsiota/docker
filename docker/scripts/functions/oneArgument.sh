@@ -1,14 +1,14 @@
 #!/bin/bash
 
-source "functions/lampUp.sh"
-source "functions/lampDown.sh"
-source "functions/lampRestart.sh"
-source "functions/lampInfo.sh"
-source "functions/lampPhp.sh"
-source "functions/lampMysql.sh"
-source "functions/lampSave.sh"
-source "functions/lampCreate.sh"
-source "functions/lampProvision.sh"
+source "${BASE_PATH}/functions/lampUp.sh"
+source "${BASE_PATH}/functions/lampDown.sh"
+source "${BASE_PATH}/functions/lampRestart.sh"
+source "${BASE_PATH}/functions/lampInfo.sh"
+source "${BASE_PATH}/functions/lampPhp.sh"
+source "${BASE_PATH}/functions/lampMysql.sh"
+source "${BASE_PATH}/functions/lampSave.sh"
+source "${BASE_PATH}/functions/lampCreate.sh"
+source "${BASE_PATH}/functions/lampProvision.sh"
 
 function oneArgument {
 

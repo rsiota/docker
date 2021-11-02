@@ -1,10 +1,12 @@
 #!/bin/bash
 
-source "functions/textStyles.sh"
-source "functions/noArguments.sh"
-source "functions/oneArgument.sh"
-source "functions/twoArguments.sh"
-source "functions/moreThanTwoArguments.sh"
+source "lampPath.sh"
+
+source "${BASE_PATH}/functions/textStyles.sh"
+source "${BASE_PATH}/functions/noArguments.sh"
+source "${BASE_PATH}/functions/oneArgument.sh"
+source "${BASE_PATH}/functions/twoArguments.sh"
+source "${BASE_PATH}/functions/moreThanTwoArguments.sh"
 
 
 if [[ $# == 0 ]]; 
