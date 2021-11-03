@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source "${BASE_PATH}/functions/networkLampCreate.sh"
-source "${BASE_PATH}/functions/mysqlContainerStart.sh"
-source "${BASE_PATH}/functions/phpContainerStart.sh"
+source "${SCRIPTS_PATH}/functions/networkLampCreate.sh"
+source "${SCRIPTS_PATH}/functions/mysqlContainerStart.sh"
+source "${SCRIPTS_PATH}/functions/phpContainerStart.sh"
 
 textStyles
 

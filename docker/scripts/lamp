@@ -1,12 +1,9 @@
-#!/bin/bash
 
-source "lampPath.sh"
-
-source "${BASE_PATH}/functions/textStyles.sh"
-source "${BASE_PATH}/functions/noArguments.sh"
-source "${BASE_PATH}/functions/oneArgument.sh"
-source "${BASE_PATH}/functions/twoArguments.sh"
-source "${BASE_PATH}/functions/moreThanTwoArguments.sh"
+source "${SCRIPTS_PATH}/functions/textStyles.sh"
+source "${SCRIPTS_PATH}/functions/noArguments.sh"
+source "${SCRIPTS_PATH}/functions/oneArgument.sh"
+source "${SCRIPTS_PATH}/functions/twoArguments.sh"
+source "${SCRIPTS_PATH}/functions/moreThanTwoArguments.sh"
 
 
 if [[ $# == 0 ]]; 

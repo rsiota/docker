@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source "${BASE_PATH}/functions/removeRunningContainersApartMysql.sh"
-source "${BASE_PATH}/functions/phpContainerStart.sh"
+source "${SCRIPTS_PATH}/functions/removeRunningContainersApartMysql.sh"
+source "${SCRIPTS_PATH}/functions/phpContainerStart.sh"
 
 function lampPhp {
     removeRunningContainersApartMysql
