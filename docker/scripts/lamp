@@ -1,4 +1,14 @@
 
+if [ -z ${SCRIPTS_PATH+x} ];
+then
+    SCRIPTS_PATH="."
+fi
+
+if [ -z ${DOCKER_PATH+x} ];
+then
+    DOCKER_PATH="../.."
+fi
+
 source "${SCRIPTS_PATH}/functions/textStyles.sh"
 source "${SCRIPTS_PATH}/functions/noArguments.sh"
 source "${SCRIPTS_PATH}/functions/oneArgument.sh"
