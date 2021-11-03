@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source "functions/networkLampConnectContainers.sh"
+source "${SCRIPTS_PATH}/functions/networkLampConnectContainers.sh"
 
 function mysqlContainerStart {
 
-    cd ../../docker/mysql56
+    cd ${DOCKER_PATH}/mysql56
     docker-compose up -d
     networkLampConnectContainers mysql
 

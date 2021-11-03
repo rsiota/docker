@@ -1,14 +1,14 @@
 #!/bin/bash
 
-source "functions/networkLampCreate.sh"
-source "functions/mysqlContainerStart.sh"
-source "functions/phpContainerStart.sh"
+source "${SCRIPTS_PATH}/functions/networkLampCreate.sh"
+source "${SCRIPTS_PATH}/functions/mysqlContainerStart.sh"
+source "${SCRIPTS_PATH}/functions/phpContainerStart.sh"
 
 textStyles
 
 function lampUp {
 
-    echo -e "${BLUE}Pruning unused containers..."
+    echo -e "Pruning unused containers..."
     docker container prune --force
     networkLampCreate 
     mysqlContainerStart

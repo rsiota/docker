@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "functions/helpLamp.sh"
+source "${SCRIPTS_PATH}/functions/helpLamp.sh"
 
 function noArguments {
     helpLamp

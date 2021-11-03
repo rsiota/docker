@@ -14,7 +14,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ../../code/mysql-data:/var/lib/mysql
+      - ../../code/mysql:/var/lib/mysql
 
 volumes:
   mysql-data:
