@@ -1,0 +1,14 @@
+# Use root/root user/password credentials
+version: '3.7'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    container_name: php74
+    volumes:
+      - "../../code/www:/var/www"
+      - "../../code/vhosts:/etc/apache2/sites-enabled"
