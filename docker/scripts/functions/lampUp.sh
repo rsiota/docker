@@ -11,8 +11,8 @@ function lampUp {
     echo -e "Pruning unused containers..."
     docker container prune --force
     networkLampCreate 
-    mysqlContainerStart
-    phpContainerStart 74 
+    mysqlContainerStart 57_M1
+    phpContainerStart 74_M1 
 
 }
 
