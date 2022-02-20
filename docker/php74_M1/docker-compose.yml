@@ -11,5 +11,5 @@ services:
     container_name: php74_M1
     platform: linux/x86_64
     volumes:
-      - "../../code/www:/var/www/"
+      - "../../code/www:/var/www"
       - "../../code/vhosts:/etc/apache2/sites-enabled"
