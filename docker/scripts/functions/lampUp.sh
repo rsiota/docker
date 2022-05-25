@@ -2,6 +2,7 @@
 
 source "${SCRIPTS_PATH}/functions/networkLampCreate.sh"
 source "${SCRIPTS_PATH}/functions/mysqlContainerStart.sh"
+source "${SCRIPTS_PATH}/functions/elasticContainerStart.sh"
 source "${SCRIPTS_PATH}/functions/phpContainerStart.sh"
 
 textStyles
@@ -12,6 +13,7 @@ function lampUp {
     docker container prune --force
     networkLampCreate 
     mysqlContainerStart 57_M1
+    elasticContainerStart
     phpContainerStart 74_M1 
 
 }
